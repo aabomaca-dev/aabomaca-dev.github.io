@@ -1,118 +1,160 @@
-<!doctype html>
-<html>
-<head> 
-<title>
-          mallisivu
-</title>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>Arctic Market</title>
+
 <style>
-
-
-       #otsikko {
-                color : #121212;
-                font-size : 30px;
-                border : solid 3px #ff0000;
-                width: 500px; 
-                //height : 50px;
-                text-align : center;
-                padding : 20px;
-                border-radius : 10px;
-                background : #dddddd;
-                font-family : Arial; 
-                text-decoration : underline;
-                font-weight : bold;
-                position : absolute;
-                top:50px;
-                left : 300px;
-       }
-
-
-   #linkit {
-            color : #121212;
-                font-size : 20px;
-                border : solid 3px #0000ff;
-                width: 200px; 
-                height : 150px;
-                text-align : center;
-                padding : 20px;
-                border-radius : 10px;
-                background : #dddddd;
-                font-family : Arial; 
-                text-decoration : underline;
-                font-weight : bold;
-                position : absolute;
-                top:200px;
-                left : 50px;
-       }
-
-.linkki {
-	text-decoration : none;
-	color:#ff0000;
-	font-size : 18px;
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f0f0f0;
 }
 
-	.linkki:visited {
-	color: #000000;
+header {
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-	.linkki:hover {
-		color:#0000ff;
-		text-decoration : underline;
-		font-size : 19px;
-		background : #454545;
+.container {
+    display: flex;
 }
 
-       #keskilaatikko {   
-                color : #121212;
-                font-size : 30px;
-                border : solid 3px #ff0000;
-                width: 500px; 
-                //height : 50px;
-                text-align : center;
-                padding : 20px;
-                border-radius : 10px;
-                background : #dddddd;
-                font-family : Arial; 
-                text-decoration : underline;
-                font-weight : bold;
-                position : absolute;
-                top:150px;
-                left : 300px;
-       }
+.products {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
 
-      body {
-		background : url("ucl.jpg");
-		background-repeat : no-repeat;
-		background-position: 20px 30px;
-		background-size: cover;
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
 
-	}
+.cart {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-left: 2px solid #ddd;
+}
 
+button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
 
-
+button:hover {
+    opacity: 0.8;
+}
 </style>
-
 </head>
 
 <body>
 
-      <div id="otsikko">
-      gggggggg
-     </div>
-      
-     <div id="linkit">
-            <a href="https://www.youtube.com" class="linkki" >youtube </a><br />
-            <a href="https://poki.com" class="linkki" > Peli </a><br />
-      </div>
-    
-      <div id="keskilaatikko">
-              <br /> 
-   
-           <img src="ufo.gif" />    
+<header>
+<h1>DUMB Market</h1>
+<p>tyhmä verkkokauppa</p>
+</header>
 
-	</div>   
-  
+<div class="container">
+
+<div class="products">
+
+<div class="product">
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSx_NngNancDnCSGv1XbVCDYu5NcH9YATPs15irIlmqn_0DwC6fyTXkK3pVHDkCaWWfoJPBhMjjgqegMmmTS0sArZ4Z2KmK0zgWkIiwuEZYYyT2ivhfbrZcXA&usqp=CAc">
+<h3>Langattomat kuulokkeet</h3>
+<p>499.99€</p>
+<button onclick="addToCart('Kuulokkeet',499.99)">Lisää</button>
+</div>
+
+<div class="product">
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSXAQnkzDga5r9NKoYsaVhr0-8r4jhx8wNzDGoI53Ykybxbf5jXzu0M6Jia2K3I-UOVx2yNSellzwqswvNjbVkNYbHbYF0fF6vx34q8RzjuN7yjZIJ3IGG5QYPBGZWGbXpHh7aYGgY&usqp=CAc">
+<h3>Huppari</h3>
+<p>999.99€</p>
+<button onclick="addToCart('Huppari',999.99)">Lisää</button>
+</div>
+
+<div class="product">
+<img src="data:image/webp;base64,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">
+<h3>sähköpotkulauta</h3>
+<p>559.99€</p>
+<button onclick="addToCart('sähköpotkulauta',559.99)">Lisää</button>
+</div>
+
+<div class="product">
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQKfL1bQFpo_opHRa-wWdrI7RHjzIzS_FwB4-eWSAfqiz3TSzh1IHLUg302Dowet1D4Viptd1O4BeWshGsvYpqdqONf2Iu0UB5AUVgwASbB8ZUTItX-7pqDbfoOlT-KsTTpDFrG2sb5&usqp=CAc">
+<h3>asics kengät</h3>
+<p>149.99€</p>
+<button onclick="addToCart('asics kengät',149.99)">Lisää</button>
+</div>
+
+<div class="product">
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQULi0leB9WQxPIbq_LUW16Amsbz4svBeJC-ypx8k7mJCvRwr9q9aziYMmeyObJtCBoYTo--zGb4SUWhpBEEJTFcAhUnyW4WVEf182sXoTt4b4R0tiMIXJuC8EySjpEqGh3YOGGpH-Y&usqp=CAc">
+<h3>Ps5</h3>
+<p>559.99€</p>
+<button onclick="addToCart('ps5',559.99)">Lisää</button>
+</div>
+
+<div class="product">
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT4clSf_f9d_ci23cISy2xVOlldN0l3qpvrF7s5el1pvma-ZESuAhAVHhTL4f0-sVbZrB_mj2HVspyx3d1yNgYjFxLtthQJ3mNGUiZ-tBJKOlIR-6Nm04TiOqAmoFO7_hY3_sshLE8&usqp=CAc">
+<h3>takki</h3>
+<p>499.99€</p>
+<button onclick="addToCart('takki',499.99)">Lisää</button>
+</div>
+
+<div class="product">
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSzdq_OIXvxmzc4RAPkZ15G1Lj7I9nVACADFfXEWVOTbk8UDzakqbcWExyjsFItr7n6lB3-DeyMgaVHNaCWBHmsNPZ3vkysAJSk3LJ3g14vm1IrME3WdXgyO-BhaeXynIRngyM220Hh&usqp=CAc">
+<h3>iphone 17pro</h3>
+<p>1149.99€</p>
+<button onclick="addToCart('iphone 17pro',1149.99)">Lisää</button>
+</div>
+
+<div class="product">
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.zNN6rm3I224pUb_CmEnHCQHaE8%3Fpid%3DApi&f=1&ipt=6052d7d2ea1f8eba82f703e405e449c7d79ff6025c8d0f5ff32576dac3f58db9&ipo=images">
+<h3>auto</h3>
+<p>99999.99€</p>
+<button onclick="addToCart('auto',99999.99)">Lisää</button>
+</div>
+
+
+</div>
+
+<div class="cart">
+<h2>Ostoskori</h2>
+<ul id="cart"></ul>
+<p><b>Yhteensä: <span id="total">0</span>€</b></p>
+</div>
+
+</div>
+
+<script>
+let total = 0;
+
+function addToCart(name, price) {
+    let cart = document.getElementById("cart");
+    let item = document.createElement("li");
+    item.textContent = name + " - " + price + "€";
+    cart.appendChild(item);
+
+    total += price;
+    document.getElementById("total").textContent = total.toFixed(2);
+}
+</script>
 
 </body>
-
 </html>
